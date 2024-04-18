@@ -2,13 +2,16 @@
 name = "fcm_decrypt"
 version = "0.1.0"
 authors = ["Bikramaditya Meher <bikramadityameher20@gmail.com>"]
+edition = "2021"
 
-[[bin]]
+
+[lib]
 name = "fcm_decrypt"
-path = "main.rs"
+crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
 ece = "2.2.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 base64 = "0.21.0"
+openssl = {version = "0.10.35", features = ["vendored"]}
