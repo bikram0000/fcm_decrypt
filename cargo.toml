@@ -4,10 +4,12 @@ version = "0.1.0"
 authors = ["Bikramaditya Meher <bikramadityameher20@gmail.com>"]
 edition = "2021"
 
-
 [lib]
 name = "fcm_decrypt"
 crate-type = ["cdylib", "staticlib"]
+
+[profile.release]
+strip = true
 
 [dependencies]
 ece = "2.2.0"
