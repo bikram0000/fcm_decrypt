@@ -19,7 +19,7 @@ use std::{
 pub extern "C" fn decrypt_message(message_json: *const c_char) -> *mut c_char {
     // Print the input message_json
     let message_json_str = unsafe { CStr::from_ptr(message_json).to_str().unwrap() };
-    println!("Input message (JSON): {}", message_json_str);
+    // println!("Input message (JSON): {}", message_json_str);
 
     // Handle potential deserialization error
     let message: Result<Value, serde_json::Error> = serde_json::from_str(message_json_str);
